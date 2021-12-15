@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Login Screen - ATM Simulation</title>
+    <meta name="description" content="Index">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h2 align="center" class="help-block">ATM MANAGEMENT SYSTEM</h2>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <form th:action="@{/login}" th:object="${card}" method="POST">
+        <div class="input-group">
+            <h5>Enter Card Number</h5>
+            <input th:field="*{cardNumber}" type="text" class="form-control" required="required" placeholder="Card Number" name="cardNumber">
+        </div>
+        <br>
+        <div class="input-group">
+            <h5>Enter PIN</h5>
+            <input th:field="*{pin}" type="password" class="form-control" required="required" placeholder="PIN" name="pin">
+        </div>
+        <br>
+<!--        <input type="submit" value="Login" class="btn btn-primary">-->
+        <button type="submit" value="Create Account" class="btn btn-success">Create Account</button>
+    </form><br>
+    <div th:if="${errorMessage} != null" class="alert alert-danger" >
+        <p th:text="${errorMessage}"></p>
+    </div>
+</div>
+</body>
+</html>
