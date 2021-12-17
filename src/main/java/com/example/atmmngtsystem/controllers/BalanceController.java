@@ -4,8 +4,8 @@ package com.example.atmmngtsystem.controllers;
 import com.example.atmmngtsystem.enums.OperationType;
 import com.example.atmmngtsystem.models.Card;
 import com.example.atmmngtsystem.models.Operations;
-import com.example.atmmngtsystem.services.impl.CardServiceImpl;
-import com.example.atmmngtsystem.services.impl.OperationsServiceImpl;
+import com.example.atmmngtsystem.services.impl.CardService;
+import com.example.atmmngtsystem.services.impl.OperationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +16,11 @@ import java.time.LocalDateTime;
 @Controller
 public class BalanceController {
 
-    private OperationsServiceImpl operationsService;
-    private CardServiceImpl cardService;
+    private OperationService operationsService;
+    private CardService cardService;
 
 
-    public BalanceController(OperationsServiceImpl operationsService, CardServiceImpl cardService) {
+    public BalanceController(OperationService operationsService, CardService cardService) {
         this.operationsService = operationsService;
         this.cardService = cardService;
     }

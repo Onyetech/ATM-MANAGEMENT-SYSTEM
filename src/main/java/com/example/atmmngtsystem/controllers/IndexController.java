@@ -3,7 +3,6 @@ package com.example.atmmngtsystem.controllers;
 
 import com.example.atmmngtsystem.models.Card;
 import com.example.atmmngtsystem.services.CardService;
-import com.example.atmmngtsystem.services.impl.CardServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +30,10 @@ public class IndexController {
         long cardNumber = Long.parseLong(number.replaceAll("[-]", ""));
 
         //Checking if card exist
+        if(cardService.cardExist(cardNumber)) {
+            model.addAttribute("cardNumberIsValid","Card Number Is Valid!");
+            return "pinentry";
+        } else
         if (!cardService.cardExist(cardNumber)) {
 
             model.addAttribute("wrongCardNumber", "Wrong card Number!");

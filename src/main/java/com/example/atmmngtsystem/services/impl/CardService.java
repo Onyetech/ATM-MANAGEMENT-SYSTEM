@@ -9,12 +9,12 @@ import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CardServiceImpl implements CardService {
+public class CardService implements com.example.atmmngtsystem.services.CardService {
 
 
     private CardRepository cardRepository;
 
-    public CardServiceImpl(CardRepository cardRepository) {
+    public CardService(CardRepository cardRepository) {
         this.cardRepository = cardRepository;
     }
 

@@ -3,8 +3,8 @@ package com.example.atmmngtsystem.controllers;
 import com.example.atmmngtsystem.enums.OperationType;
 import com.example.atmmngtsystem.models.Card;
 import com.example.atmmngtsystem.models.Operations;
-import com.example.atmmngtsystem.services.impl.CardServiceImpl;
-import com.example.atmmngtsystem.services.impl.OperationsServiceImpl;
+import com.example.atmmngtsystem.services.impl.CardService;
+import com.example.atmmngtsystem.services.impl.OperationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 @Controller
 public class WithdrawalsController {
 
-    private CardServiceImpl cardService;
-    private OperationsServiceImpl operationsService;
+    private CardService cardService;
+    private OperationService operationsService;
 
-    public WithdrawalsController(CardServiceImpl cardService, OperationsServiceImpl operationsService) {
+    public WithdrawalsController(CardService cardService, OperationService operationsService) {
         this.cardService = cardService;
         this.operationsService = operationsService;
     }

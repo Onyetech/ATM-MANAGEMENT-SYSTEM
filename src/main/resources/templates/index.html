@@ -7,11 +7,12 @@
     <title>Home</title>
 
 </head>
-
+<!--#528ECC-->
 <body onload="attachHandlers()">
 <div id="keypad" class="keybord">
-    <h4 style="color: #528ECC; text-align: center ">Enter your card number</h4>
-    <form th:action="@{/index}" method="post"  >
+    <h2 style="color: blue; text-align: center"; class="help-block">WELCOME TO DECADEV'S ATM MANAGEMENT SYSTEM</h2>
+    <h3 style="color: #528ECC; text-align: center ">Please, Enter Your Card Number</h3>
+    <form style="background-color: gray; text-align: center" th:action="@{/index}" method="post"  >
 
         <div>
 
@@ -66,7 +67,7 @@
 <!--        <input th:href="@{/createCard}" type="submit" name="signup" value="SignUp" id="SignUpButton" class="buttons">-->
 <!--    <a th:href="@{/createCard}" type="submit" name="signup" value="SignUp" id="SignUpButton" class="buttons">-->
 <!--&lt;!&ndash;    </form>&ndash;&gt;-->
-    <form th:action="@{/createCards}" method="post">
+    <form style="text-align: center" th:action="@{/createCards}" method="post">
         <button class="button is-success is-centered" >signup</button>
     </form>
 <!--        <a style="cursor: pointer;" class="button is-success is-centered" th:href="@{/createCard}">Signup</a>-->

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
-public class OperationsServiceImpl implements OperationsService {
+public class OperationService implements OperationsService {
     private OperationsRepository operationsRepository;
 
-    public OperationsServiceImpl(OperationsRepository operationsRepository) {
+    public OperationService(OperationsRepository operationsRepository) {
         this.operationsRepository = operationsRepository;
     }
 
